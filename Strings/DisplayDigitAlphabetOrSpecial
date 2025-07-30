@@ -1,0 +1,15 @@
+public class s {
+
+	public static void main(String[] args) {
+		
+char c = 'h';
+if (((int)c >= 65 && (int)c<=90)||((int)c>=97&&(int)c<=122)) {
+	System.out.println("Alphabet");
+}
+else if((int)c >=48 && (int)c<=57) {
+	System.out.println("Digits");
+}
+else
+	System.out.println("Special");
+}
+}
