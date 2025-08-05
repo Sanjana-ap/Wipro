@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+public class s {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String input1 = sc.nextLine().toLowerCase();  // lowercase pattern
+        String input2 = sc.nextLine();
+
+        String[] words = input2.split(":");
+        List<String> output = new ArrayList<>();
+
+        for (String word : words) {
+            word = word.trim().toLowerCase();  // lowercase word too
+
+            if (word.length() != input1.length()) continue;
+
+            boolean match = true;
+            for (int i = 0; i < input1.length(); i++) {
+                if (input1.charAt(i) == '_') continue;
+                if (input1.charAt(i) != word.charAt(i)) {
+                    match = false;
+                    break;
+                }
+            }
+
+            if (match) {
+                output.add(word);
+            }
+        }
+
+        String out = String.join(":", output);
+        System.out.println(out);
+        sc.close();
+    }
+
+}
