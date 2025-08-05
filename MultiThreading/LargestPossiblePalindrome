@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.util.HashMap;
+
+public class LargestPossiblePalindrome {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine().toLowerCase();  // case-insensitive
+        int count = 0;
+
+        HashMap<Character, Integer> hm = new HashMap<>();
+        for (int i = 0; i < input.length(); i++) {
+            hm.put(input.charAt(i), hm.getOrDefault(input.charAt(i), 0) + 1);
+        }
+
+        for (int v : hm.values()) {
+            if (v % 2 != 0) {
+                count++;  // count odd frequency characters
+            }
+        }
+
+        if (count == input.length()) {
+            System.out.println("-1");  // all chars are odd — can't form palindrome
+        } else {
+            System.out.println(Math.max(0, count - 1));  // remove (oddCount - 1) chars
+        }
+
+        sc.close();
+    }
+}
