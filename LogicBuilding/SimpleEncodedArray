@@ -1,0 +1,21 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+class s {
+    public static void main(String args[]) {
+    	Scanner sc = new Scanner(System.in);
+       ArrayList<Integer> original = new ArrayList<>();
+       ArrayList<Integer> encoded = new ArrayList<>();
+       int n = sc.nextInt();
+       for(int i=0;i<n;i++) {
+    	   int ele=sc.nextInt();
+    	   original.add(ele);
+       }
+       for(int i=0;i<n-1;i++) {
+    	   int ele = original.get(i+1)-original.get(i);
+    	   encoded.add(ele);
+       }
+       encoded.add(original.get(n-1));
+       System.out.print(encoded);
+       sc.close();
+    }
+}
