@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class s {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int opt = sc.nextInt();
+        int sum = 0;
+        boolean add = true;
+        int cnt = 0; // number of terms processed
+
+        for (int i = N; i >= 1; i--) {
+            if (add) sum += i;
+            else sum -= i;
+
+            cnt++;
+
+            if (opt == 1) {
+                // opt 1: start with add, then flip every term
+                add = !add;
+            } else {
+                // opt 2: add first two terms, then alternate
+                if (cnt >= 2) add = !add;
+            }
+        }
+
+        System.out.println(sum);
+    }
+}
