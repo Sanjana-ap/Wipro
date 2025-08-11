@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class s {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Taking user input
+        System.out.print("Enter first word: ");
+        String word1 = sc.nextLine();
+
+        System.out.print("Enter second word: ");
+        String word2 = sc.nextLine();
+
+        sc.close();
+
+        // Generate password
+        String password = generatePassword(word1, word2);
+
+        // Output the result
+        System.out.println("Generated Password: " + password);
+    }
+
+    public static String generatePassword(String word1, String word2) {
+        String[] w1Parts = splitIntoThree(word1);
+        String[] w2Parts = splitIntoThree(word2);
+
+        return w2Parts[0] + w1Parts[0] + w1Parts[2] + w2Parts[2];
+    }
+
+    public static String[] splitIntoThree(String word) {
+        int length = word.length();
+        int partSize = length / 3;
+        int remainder = length % 3;
+
+        String part1, part2, part3;
+
+        if (remainder == 0) {
+            // Perfectly divisible
+            part1 = word.substring(0, partSize);
+            part2 = word.substring(partSize, partSize * 2);
+            part3 = word.substring(partSize * 2);
+        } else if (remainder == 1) {
+            // Middle part gets 1 extra character
+            part1 = word.substring(0, partSize);
+            part2 = word.substring(partSize, partSize * 2 + 1);
+            part3 = word.substring(partSize * 2 + 1);
+        } else {
+            // remainder == 2, middle part gets 2 extra characters
+            part1 = word.substring(0, partSize);
+            part2 = word.substring(partSize, partSize * 2 + 2);
+            part3 = word.substring(partSize * 2 + 2);
+        }
+
+        return new String[]{part1, part2, part3};
+    }
+}
