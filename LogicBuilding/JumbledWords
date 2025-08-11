@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+class s {
+    public static void main(String args[]) {
+    	Scanner sc = new Scanner(System.in);
+        String input1 = sc.nextLine();
+        int input2 = sc.nextInt();
+
+        String[] words = input1.split(" ");
+        ArrayList<String> jumbledWords = new ArrayList<>();
+
+        for (String word : words) {
+            char[] letters = word.toCharArray();
+            StringBuilder sb = new StringBuilder();
+
+            if (input2 == 1) {
+                for (int i = 0; i < letters.length; i += 2) { 
+                    sb.append(letters[i]);
+                }
+                int lastEvenIndex = (letters.length % 2 == 0) ? letters.length - 1 : letters.length - 2;
+                for (int i = lastEvenIndex; i >= 0; i -= 2) {
+                    sb.append(letters[i]);
+                }
+            } 
+            else if (input2 == 2) {
+                for (int i = 0; i < letters.length; i += 2) {
+                    sb.append(letters[i]);
+                }
+                for (int i = 1; i < letters.length; i += 2) {
+                    sb.append(letters[i]);
+                }
+            }
+
+            jumbledWords.add(sb.toString());
+        }
+        String result = String.join(" ", jumbledWords);
+        System.out.println(result);
+	
+       sc.close();
+    }
+}
