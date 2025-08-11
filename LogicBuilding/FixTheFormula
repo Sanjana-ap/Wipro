@@ -1,0 +1,45 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+class s {
+	 public static int fixTheFormula(String input1) {
+	        ArrayList<Integer> numbers = new ArrayList<>();
+	        ArrayList<Character> operators = new ArrayList<>();
+
+	        // Step 1: Extract numbers and operators
+	        for (char ch : input1.toCharArray()) {
+	            if (Character.isDigit(ch)) {
+	                numbers.add(ch - '0'); // convert char digit to int
+	            } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+	                operators.add(ch);
+	            }
+	        }
+
+	        // Step 2: Evaluate expression left to right
+	        int result = numbers.get(0);
+	        for (int i = 0; i < operators.size(); i++) {
+	            char op = operators.get(i);
+	            int nextNum = numbers.get(i + 1);
+
+	            switch (op) {
+	                case '+': result += nextNum; break;
+	                case '-': result -= nextNum; break;
+	                case '*': result *= nextNum; break;
+	                case '/': result /= nextNum; break; // integer division
+	            }
+	        }
+
+	        return result;
+	    }
+
+	    public static void main(String[] args) {
+	        Scanner sc = new Scanner(System.in);
+
+	        System.out.print("Enter the tricky string: ");
+	        String input = sc.nextLine();
+
+	        int answer = fixTheFormula(input);
+	        System.out.println("Final Answer: " + answer);
+
+	        sc.close();
+	    }
+}
