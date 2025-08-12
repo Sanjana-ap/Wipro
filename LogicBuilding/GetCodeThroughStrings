@@ -1,0 +1,20 @@
+import java.util.*;
+class GetCodeThroughStrings{
+  public static void main(String args[]){
+    String words[] = input1.split(" ");
+        int sum=0;
+        for(String word:words){
+            sum+=word.length();
+        }
+        int temp=sum;
+        while(sum>10){
+            sum=0;
+            while(temp>0){
+                int r = temp%10;
+                sum+=r;
+                temp/=10;
+            }
+        }
+		return sum;
+  }
+}
