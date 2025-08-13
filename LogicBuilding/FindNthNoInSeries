@@ -1,0 +1,11 @@
+public int series(int ip1,int ip2,int ip3,int ip4){
+   int diff1=input2-input1,diff2=input3-input2;
+    int current=input1;
+    for(int i=1;i<input4;i++){
+        if(i%2!=0)
+        current+=diff1;
+        else
+            current+=diff2;
+    }
+    return current;
+	}  
