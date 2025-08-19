@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Picture</title>
+  </head>
+  <body>
+    <a id="top"></a>
+    <a href="#bottom"> Go to bottom</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, sequi aut eius id, ea sit iure cupiditate dolore repellendus adipisci numquam laboriosam, doloribus consectetur! Cupiditate nisi, expedita culpa odit ullam, perferendis mollitia earum rerum alias minus corrupti cumque neque exercitationem nostrum laudantium quam eveniet. Veniam harum similique reiciendis fuga aliquid!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam odio nemo laboriosam expedita vel iste atque. Ut, nihil laborum, ipsam animi ipsum iste iure quia sunt nostrum odio esse molestiae libero? Blanditiis perspiciatis magni consectetur, nulla nobis, fugit natus aut repellendus delectus repudiandae tempora, neque beatae laboriosam cum iure. Quis aliquid veritatis amet soluta facilis vitae! Incidunt nostrum velit quibusdam vero quidem harum rem, quis hic cum dolorum totam, quam saepe libero iusto tempore numquam earum dolores cupiditate nihil! Expedita et numquam nisi deleniti nam culpa tenetur! Officia, fuga libero. Nihil voluptate necessitatibus sed corrupti praesentium voluptas perferendis aspernatur modi!</p>
+    <a id="bottom"></a>
+    <a href="#top">Go to top</a>
+  </body>
+</html>
