@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Picture</title>
+  </head>
+  <body>
+    <img src="./asus.jpg" width="200" height="200" style="border: solid pink;">
+  </body>
+</html>
