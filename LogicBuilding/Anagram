@@ -1,0 +1,22 @@
+import java.util.*;
+
+class s {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();
+        String word2 = sc.nextLine();
+        HashMap<Character,Integer> hm1 = new HashMap<>();
+        for(char l : word.toCharArray())
+            hm1.put(l, hm1.getOrDefault(l, 0) + 1);
+
+        HashMap<Character,Integer> hm2 = new HashMap<>();
+        for(char l : word2.toCharArray())
+            hm2.put(l, hm2.getOrDefault(l, 0) + 1);
+
+        System.out.println(hm1.equals(hm2)); 
+
+        
+    }
+}
+
