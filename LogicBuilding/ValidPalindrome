@@ -1,0 +1,32 @@
+import java.util.*;
+
+class s {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String sent = sc.nextLine();
+        char word[] = sent.toCharArray();
+        int left=0,right=word.length-1;
+        boolean flag=true;
+        while(left<right) {
+        	if(!(Character.isLetter(word[left]))) {
+        		left++;
+        		continue;
+        	}
+        	if(!(Character.isLetter(word[right]))) {
+        		right--;
+        		continue;
+        	}
+        	if(Character.toLowerCase(word[left])==Character.toLowerCase(word[right])) {
+        		left++;
+        		right--;
+        	}
+        	else {
+        		flag=false;
+        		break;
+        	}
+        }
+        System.out.println(flag);
+        
+    }
+}
